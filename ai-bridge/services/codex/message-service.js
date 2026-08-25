@@ -18,9 +18,10 @@
  */
 
 import { CodexPermissionMapper } from '../../utils/permission-mapper.js';
+import { getCodexCliPathOverride } from '../../utils/codex-cli-path.js';
 import { getMcpServerTools as getMcpServerToolsImpl } from '../claude/mcp-status/index.js';
 import {
-  logDebug, logInfo, logWarn,
+  logDebug,
   ensureCodexSdk,
   normalizeCodexPermissionMode,
   resolveSandboxModeOverride,
@@ -133,6 +134,12 @@ export async function sendMessage(
       removedKeys,
       removedCount: removedKeys.length
     }));
+
+    const codexCliOverride = getCodexCliPathOverride();
+    if (codexCliOverride) {
+      codexOptions.codexPathOverride = codexCliOverride;
+      logDebug('Codex', 'Using custom Codex CLI:', codexCliOverride);
+    }
 
     const codex = new Codex(codexOptions);
 
