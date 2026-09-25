@@ -28,7 +28,7 @@
     "typescript": "~5.9.3",
     "vite": "^7.2.4",
     "vite-plugin-singlefile": "^2.3.0",
-    "vitest": "^3.2.4"
+    "vitest": "^4.1.11"
   },
   "dependencies": {
     "@base-ui/react": "^1.6.0",
