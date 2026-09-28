@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugins>
+  <plugin id="com.github.idea-claude-code-gui" url="${PLUGIN_URL}" version="${PLUGIN_VERSION}">
+    <idea-version since-build="233" until-build="263.*"/>
+  </plugin>
+</plugins>
